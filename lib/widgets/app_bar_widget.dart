@@ -36,8 +36,9 @@ class _AppBarWidgetState extends State<AppBarWidget>
       duration: const Duration(milliseconds: 100),
     );
 
-    _animationSlide = Tween<Offset>(begin:const Offset(0, -1), end:const Offset(0, 0))
-        .animate(CurvedAnimation(
+    _animationSlide =
+        Tween<Offset>(begin: const Offset(0, -1), end: const Offset(0, 0))
+            .animate(CurvedAnimation(
       curve: Curves.easeInSine,
       parent: _animationController,
     ));
@@ -65,15 +66,13 @@ class _AppBarWidgetState extends State<AppBarWidget>
 
   @override
   Widget build(BuildContext context) {
-    return widget.show == true ?
-    
-    SliverAppBar(
+    return SliverAppBar(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30))),
       bottom: PreferredSize(
-        preferredSize:  Size.fromHeight(20.h),
+        preferredSize: Size.fromHeight(20.h),
         child: Transform.translate(
           offset: const Offset(0, -6),
           child: SizedBox(
@@ -81,7 +80,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
               child: FadeTransition(
                 opacity: _animationFade,
                 child: SlideTransition(
-                    position: _animationSlide, child:const DateWidgetTop()),
+                    position: _animationSlide, child: const DateWidgetTop()),
               )),
         ),
       ),
@@ -99,51 +98,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
       ),
       centerTitle: false,
       elevation: 0,
-      title:  Text(
-        'My Availability',
-        style: TextStyle(
-            fontSize: 19.sp,
-            color: Colors.black,
-            fontFamily: 'Matter',
-            fontWeight: FontWeight.w500),
-      ),
-      backgroundColor: Colors.white.withOpacity(0.1),
-      primary: true,
-      pinned: true,
-    ) :
-    SliverAppBar(
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30))),
-      bottom: PreferredSize(
-        preferredSize:  Size.fromHeight(20.h),
-        child: Transform.translate(
-          offset: const Offset(0, -6),
-          child: SizedBox(
-              height: 30.h,
-              child: FadeTransition(
-                opacity: _animationFade,
-                child: SlideTransition(
-                    position: _animationSlide, child:const DateWidgetTop()),
-              )),
-        ),
-      ),
-      flexibleSpace: ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
-            color: Colors.white.withOpacity(0.8),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: const [],
-            ),
-          ),
-        ),
-      ),
-      centerTitle: false,
-      elevation: 0,
-      title:  Text(
+      title: Text(
         'My Availability',
         style: TextStyle(
             fontSize: 19.sp,
