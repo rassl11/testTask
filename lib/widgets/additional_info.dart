@@ -113,19 +113,19 @@ class AdditionalInfo extends StatelessWidget {
             Image.asset('assets/images/my_network.png',
             height: 35,),
               const  SizedBox(height: 15,),
-        const  Text(
+          Text(
             'My network',
             style: TextStyle(
                 fontFamily: 'Matter',
-                fontSize: 16,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w700,
                 color: Colors.white),
           ),
         const  SizedBox(height: 5,),
-        const  Text('Connect and grow your network',
+          Text('Connect and grow your network',
           style: TextStyle(
             fontFamily: 'Matter',
-            fontSize: 12,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w500,
             color: Colors.white
           ),
